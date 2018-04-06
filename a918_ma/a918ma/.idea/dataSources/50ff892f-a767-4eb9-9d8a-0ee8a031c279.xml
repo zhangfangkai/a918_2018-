@@ -1,0 +1,1062 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MySQL - byzzl@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="2.6">
+    <schema id="1" name="byzzl">
+      <visible>1</visible>
+    </schema>
+    <schema id="2" name="amc"/>
+    <schema id="3" name="brandnew"/>
+    <schema id="4" name="dwsurvey"/>
+    <schema id="5" name="information_schema"/>
+    <schema id="6" name="mysql"/>
+    <schema id="7" name="performance_schema"/>
+    <schema id="8" name="platform"/>
+    <schema id="9" name="sys"/>
+    <schema id="10" name="winter"/>
+    <table id="11" parent="1" name="auth_group"/>
+    <table id="12" parent="1" name="auth_group_permissions"/>
+    <table id="13" parent="1" name="auth_permission"/>
+    <table id="14" parent="1" name="auth_user"/>
+    <table id="15" parent="1" name="auth_user_groups"/>
+    <table id="16" parent="1" name="auth_user_user_permissions"/>
+    <table id="17" parent="1" name="count_daxue"/>
+    <table id="18" parent="1" name="count_jilu"/>
+    <table id="19" parent="1" name="count_shengfen"/>
+    <table id="20" parent="1" name="count_wenjuan"/>
+    <table id="21" parent="1" name="count_xsml"/>
+    <table id="22" parent="1" name="count_xsxk"/>
+    <table id="23" parent="1" name="count_zylx"/>
+    <table id="24" parent="1" name="count_zyly"/>
+    <table id="25" parent="1" name="da_ans_choice"/>
+    <table id="26" parent="1" name="da_ans_score"/>
+    <table id="27" parent="1" name="da_ans_wenda"/>
+    <table id="28" parent="1" name="da_choice"/>
+    <table id="29" parent="1" name="da_city"/>
+    <table id="30" parent="1" name="da_question"/>
+    <table id="31" parent="1" name="da_questype"/>
+    <table id="32" parent="1" name="da_record"/>
+    <table id="33" parent="1" name="da_score"/>
+    <table id="34" parent="1" name="da_university"/>
+    <table id="35" parent="1" name="da_user"/>
+    <table id="36" parent="1" name="da_wenjuan"/>
+    <table id="37" parent="1" name="da_xuewei"/>
+    <table id="38" parent="1" name="django_admin_log"/>
+    <table id="39" parent="1" name="django_content_type"/>
+    <table id="40" parent="1" name="django_migrations"/>
+    <table id="41" parent="1" name="django_session"/>
+    <table id="42" parent="1" name="wenjuan_huida"/>
+    <table id="43" parent="1" name="wenjuan_wenjuan"/>
+    <table id="44" parent="1" name="wenjuan_wenti"/>
+    <table id="45" parent="1" name="wenjuan_xuanxiang"/>
+    <column id="46" parent="11" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="47" parent="11" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(80)|0</data-type>
+    </column>
+    <index id="48" parent="11" name="name">
+      <columns>name</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="49" parent="11" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="50" parent="11" name="name">
+      <columns>name</columns>
+      <underlying-index>name</underlying-index>
+    </key>
+    <column id="51" parent="12" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="52" parent="12" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="53" parent="12" name="permission_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="54" parent="12" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+      <columns>group_id
+permission_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="55" parent="12" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+      <columns>permission_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="56" parent="12" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="57" parent="12" name="auth_group_permissions_group_id_permission_id_0cd325b0_uniq">
+      <columns>group_id
+permission_id</columns>
+      <underlying-index>auth_group_permissions_group_id_permission_id_0cd325b0_uniq</underlying-index>
+    </key>
+    <foreign-key id="58" parent="12" name="auth_group_permissions_group_id_b120cbf9_fk_auth_group_id">
+      <columns>group_id</columns>
+      <ref-key>~.auth_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="59" parent="12" name="auth_group_permissio_permission_id_84c5c92e_fk_auth_perm">
+      <columns>permission_id</columns>
+      <ref-key>~.auth_permission.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="60" parent="13" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="61" parent="13" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="62" parent="13" name="content_type_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="63" parent="13" name="codename">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="64" parent="13" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+      <columns>content_type_id
+codename</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="65" parent="13" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="66" parent="13" name="auth_permission_content_type_id_codename_01ab375a_uniq">
+      <columns>content_type_id
+codename</columns>
+      <underlying-index>auth_permission_content_type_id_codename_01ab375a_uniq</underlying-index>
+    </key>
+    <foreign-key id="67" parent="13" name="auth_permission_content_type_id_2f476e4b_fk_django_co">
+      <columns>content_type_id</columns>
+      <ref-key>~.django_content_type.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="68" parent="14" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="69" parent="14" name="password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(128)|0</data-type>
+    </column>
+    <column id="70" parent="14" name="last_login">
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="71" parent="14" name="is_superuser">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="72" parent="14" name="username">
+      <mandatory>1</mandatory>
+      <data-type>varchar(150)|0</data-type>
+    </column>
+    <column id="73" parent="14" name="first_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="74" parent="14" name="last_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <column id="75" parent="14" name="email">
+      <mandatory>1</mandatory>
+      <data-type>varchar(254)|0</data-type>
+    </column>
+    <column id="76" parent="14" name="is_staff">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="77" parent="14" name="is_active">
+      <mandatory>1</mandatory>
+      <data-type>tinyint(1)|0</data-type>
+    </column>
+    <column id="78" parent="14" name="date_joined">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="79" parent="14" name="username">
+      <columns>username</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="80" parent="14" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="81" parent="14" name="username">
+      <columns>username</columns>
+      <underlying-index>username</underlying-index>
+    </key>
+    <column id="82" parent="15" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="83" parent="15" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="84" parent="15" name="group_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="85" parent="15" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+      <columns>group_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="86" parent="15" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+      <columns>user_id
+group_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="87" parent="15" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="88" parent="15" name="auth_user_groups_user_id_group_id_94350c0c_uniq">
+      <columns>user_id
+group_id</columns>
+      <underlying-index>auth_user_groups_user_id_group_id_94350c0c_uniq</underlying-index>
+    </key>
+    <foreign-key id="89" parent="15" name="auth_user_groups_user_id_6a12ed8b_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="90" parent="15" name="auth_user_groups_group_id_97559544_fk_auth_group_id">
+      <columns>group_id</columns>
+      <ref-key>~.auth_group.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="91" parent="16" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="92" parent="16" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="93" parent="16" name="permission_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="94" parent="16" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+      <columns>user_id
+permission_id</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <index id="95" parent="16" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
+      <columns>permission_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="96" parent="16" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="97" parent="16" name="auth_user_user_permissions_user_id_permission_id_14a6b632_uniq">
+      <columns>user_id
+permission_id</columns>
+      <underlying-index>auth_user_user_permissions_user_id_permission_id_14a6b632_uniq</underlying-index>
+    </key>
+    <foreign-key id="98" parent="16" name="auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="99" parent="16" name="auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm">
+      <columns>permission_id</columns>
+      <ref-key>~.auth_permission.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="100" parent="17" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="101" parent="17" name="daxue_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="102" parent="17" name="shengfen_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="103" parent="17" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="104" parent="18" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="105" parent="18" name="Jilu_shengfen">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="106" parent="18" name="Jilu_daxue">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="107" parent="18" name="Jilu_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <column id="108" parent="18" name="Jilu_ml">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="109" parent="18" name="Jilu_xk">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="110" parent="18" name="Jilu_tp">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="111" parent="18" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="112" parent="19" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="113" parent="19" name="shengfen_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <key id="114" parent="19" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="115" parent="20" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="116" parent="20" name="wenjuan_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="117" parent="20" name="wenjuan_url">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="118" parent="20" name="wenjuan_tuijian">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="119" parent="20" name="wenjuan_status">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="120" parent="20" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="121" parent="21" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="122" parent="21" name="Xsml_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="123" parent="21" name="Xsml_bianhao">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <key id="124" parent="21" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="125" parent="22" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="126" parent="22" name="Xsxk_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="127" parent="22" name="Xsml_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="128" parent="22" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="129" parent="23" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="130" parent="23" name="Zylx_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="131" parent="23" name="Zylx_bianhao">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <key id="132" parent="23" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="133" parent="24" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="134" parent="24" name="Zyly_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="135" parent="24" name="Zylx_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="136" parent="24" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="137" parent="25" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="138" parent="25" name="choice_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="139" parent="25" name="record_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="140" parent="25" name="DA_ans_choice_choice_id_d965014c_fk_DA_choice_id">
+      <columns>choice_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="141" parent="25" name="DA_ans_choice_record_id_066bb8d1_fk_DA_record_id">
+      <columns>record_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="142" parent="25" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="143" parent="25" name="DA_ans_choice_choice_id_d965014c_fk_DA_choice_id">
+      <columns>choice_id</columns>
+      <ref-key>~.da_choice.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="144" parent="25" name="DA_ans_choice_record_id_066bb8d1_fk_DA_record_id">
+      <columns>record_id</columns>
+      <ref-key>~.da_record.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="145" parent="26" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="146" parent="26" name="scores">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="147" parent="26" name="record_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="148" parent="26" name="score_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="149" parent="26" name="DA_ans_score_record_id_bd979213_fk_DA_record_id">
+      <columns>record_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="150" parent="26" name="DA_ans_score_score_id_11da92af_fk_DA_score_id">
+      <columns>score_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="151" parent="26" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="152" parent="26" name="DA_ans_score_record_id_bd979213_fk_DA_record_id">
+      <columns>record_id</columns>
+      <ref-key>~.da_record.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="153" parent="26" name="DA_ans_score_score_id_11da92af_fk_DA_score_id">
+      <columns>score_id</columns>
+      <ref-key>~.da_score.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="154" parent="27" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="155" parent="27" name="ans_con">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="156" parent="27" name="question_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="157" parent="27" name="record_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="158" parent="27" name="DA_ans_wenda_question_id_77161e4f_fk_DA_question_id">
+      <columns>question_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="159" parent="27" name="DA_ans_wenda_record_id_ae713fb5_fk_DA_record_id">
+      <columns>record_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="160" parent="27" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="161" parent="27" name="DA_ans_wenda_question_id_77161e4f_fk_DA_question_id">
+      <columns>question_id</columns>
+      <ref-key>~.da_question.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="162" parent="27" name="DA_ans_wenda_record_id_ae713fb5_fk_DA_record_id">
+      <columns>record_id</columns>
+      <ref-key>~.da_record.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="163" parent="28" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="164" parent="28" name="cho_num">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="165" parent="28" name="cho_con">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="166" parent="28" name="question_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="167" parent="28" name="DA_choice_question_id_d4e24ca8_fk_DA_question_id">
+      <columns>question_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="168" parent="28" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="169" parent="28" name="DA_choice_question_id_d4e24ca8_fk_DA_question_id">
+      <columns>question_id</columns>
+      <ref-key>~.da_question.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="170" parent="29" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="171" parent="29" name="city_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="172" parent="29" name="city_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(30)|0</data-type>
+    </column>
+    <key id="173" parent="29" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="174" parent="30" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="175" parent="30" name="q_con">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="176" parent="30" name="q_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="177" parent="30" name="questype_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="178" parent="30" name="wenjuan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="179" parent="30" name="DA_question_questype_id_888b4145_fk_DA_questype_id">
+      <columns>questype_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="180" parent="30" name="DA_question_wenjuan_id_24026bb6_fk_DA_wenjuan_id">
+      <columns>wenjuan_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="181" parent="30" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="182" parent="30" name="DA_question_questype_id_888b4145_fk_DA_questype_id">
+      <columns>questype_id</columns>
+      <ref-key>~.da_questype.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="183" parent="30" name="DA_question_wenjuan_id_24026bb6_fk_DA_wenjuan_id">
+      <columns>wenjuan_id</columns>
+      <ref-key>~.da_wenjuan.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="184" parent="31" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="185" parent="31" name="ques_type">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="186" parent="31" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="187" parent="32" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="188" parent="32" name="ans_data">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="189" parent="32" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="190" parent="32" name="wenjuan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="191" parent="32" name="DA_record_user_id_03a89edc_fk_DA_user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="192" parent="32" name="DA_record_wenjuan_id_3c8e48c2_fk_DA_wenjuan_id">
+      <columns>wenjuan_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="193" parent="32" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="194" parent="32" name="DA_record_user_id_03a89edc_fk_DA_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.da_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="195" parent="32" name="DA_record_wenjuan_id_3c8e48c2_fk_DA_wenjuan_id">
+      <columns>wenjuan_id</columns>
+      <ref-key>~.da_wenjuan.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="196" parent="33" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="197" parent="33" name="cho_num">
+      <mandatory>1</mandatory>
+      <data-type>varchar(10)|0</data-type>
+    </column>
+    <column id="198" parent="33" name="score_con">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="199" parent="33" name="question_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="200" parent="33" name="DA_score_question_id_cd5019d8_fk_DA_question_id">
+      <columns>question_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="201" parent="33" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="202" parent="33" name="DA_score_question_id_cd5019d8_fk_DA_question_id">
+      <columns>question_id</columns>
+      <ref-key>~.da_question.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="203" parent="34" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="204" parent="34" name="univers_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="205" parent="34" name="univers_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="206" parent="34" name="city_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="207" parent="34" name="DA_university_city_id_f775ce92_fk_DA_city_id">
+      <columns>city_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="208" parent="34" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="209" parent="34" name="DA_university_city_id_f775ce92_fk_DA_city_id">
+      <columns>city_id</columns>
+      <ref-key>~.da_city.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="210" parent="35" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="211" parent="35" name="user_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(50)|0</data-type>
+    </column>
+    <column id="212" parent="35" name="user_password">
+      <mandatory>1</mandatory>
+      <data-type>varchar(20)|0</data-type>
+    </column>
+    <key id="213" parent="35" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="214" parent="36" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="215" parent="36" name="wj_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="216" parent="36" name="wj_date">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="217" parent="36" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="218" parent="36" name="DA_wenjuan_user_id_59dfca5c_fk_DA_user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="219" parent="36" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="220" parent="36" name="DA_wenjuan_user_id_59dfca5c_fk_DA_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.da_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="221" parent="37" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="222" parent="37" name="xuewei_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="223" parent="37" name="xuewei_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <key id="224" parent="37" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="225" parent="38" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="226" parent="38" name="action_time">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <column id="227" parent="38" name="object_id">
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="228" parent="38" name="object_repr">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="229" parent="38" name="action_flag">
+      <mandatory>1</mandatory>
+      <data-type>smallint(5) unsigned|0</data-type>
+    </column>
+    <column id="230" parent="38" name="change_message">
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="231" parent="38" name="content_type_id">
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="232" parent="38" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <index id="233" parent="38" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+      <columns>content_type_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <index id="234" parent="38" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+      <columns>user_id</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="235" parent="38" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <foreign-key id="236" parent="38" name="django_admin_log_content_type_id_c4bce8eb_fk_django_co">
+      <columns>content_type_id</columns>
+      <ref-key>~.django_content_type.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <foreign-key id="237" parent="38" name="django_admin_log_user_id_c564eba6_fk_auth_user_id">
+      <columns>user_id</columns>
+      <ref-key>~.auth_user.PRIMARY</ref-key>
+      <cascade-update-rule>restrict</cascade-update-rule>
+      <cascade-delete-rule>restrict</cascade-delete-rule>
+    </foreign-key>
+    <column id="238" parent="39" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="239" parent="39" name="app_label">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <column id="240" parent="39" name="model">
+      <mandatory>1</mandatory>
+      <data-type>varchar(100)|0</data-type>
+    </column>
+    <index id="241" parent="39" name="django_content_type_app_label_model_76bd3d3b_uniq">
+      <columns>app_label
+model</columns>
+      <desc-columns></desc-columns>
+      <unique>1</unique>
+    </index>
+    <key id="242" parent="39" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <key id="243" parent="39" name="django_content_type_app_label_model_76bd3d3b_uniq">
+      <columns>app_label
+model</columns>
+      <underlying-index>django_content_type_app_label_model_76bd3d3b_uniq</underlying-index>
+    </key>
+    <column id="244" parent="40" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="245" parent="40" name="app">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="246" parent="40" name="name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(255)|0</data-type>
+    </column>
+    <column id="247" parent="40" name="applied">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <key id="248" parent="40" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="249" parent="41" name="session_key">
+      <mandatory>1</mandatory>
+      <data-type>varchar(40)|0</data-type>
+    </column>
+    <column id="250" parent="41" name="session_data">
+      <mandatory>1</mandatory>
+      <data-type>longtext|0</data-type>
+    </column>
+    <column id="251" parent="41" name="expire_date">
+      <mandatory>1</mandatory>
+      <data-type>datetime|0</data-type>
+    </column>
+    <index id="252" parent="41" name="django_session_expire_date_a5c62663">
+      <columns>expire_date</columns>
+      <desc-columns></desc-columns>
+    </index>
+    <key id="253" parent="41" name="PRIMARY">
+      <columns>session_key</columns>
+      <primary>1</primary>
+    </key>
+    <column id="254" parent="42" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="255" parent="42" name="wenjuan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="256" parent="42" name="wenti_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="257" parent="42" name="huida_data">
+      <mandatory>1</mandatory>
+      <data-type>varchar(1000)|0</data-type>
+    </column>
+    <column id="258" parent="42" name="huida_tip">
+      <mandatory>1</mandatory>
+      <data-type>varchar(64)|0</data-type>
+    </column>
+    <key id="259" parent="42" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="260" parent="43" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="261" parent="43" name="user_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="262" parent="43" name="wenjuan_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <key id="263" parent="43" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="264" parent="44" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="265" parent="44" name="wenti_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="266" parent="44" name="wenjuan_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="267" parent="44" name="wenti_type">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="268" parent="44" name="wenti_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="269" parent="44" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+    <column id="270" parent="45" name="id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+      <sequence-identity>1</sequence-identity>
+    </column>
+    <column id="271" parent="45" name="wenti_id">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <column id="272" parent="45" name="xuanxiang_name">
+      <mandatory>1</mandatory>
+      <data-type>varchar(200)|0</data-type>
+    </column>
+    <column id="273" parent="45" name="xuanxiang_xuhao">
+      <mandatory>1</mandatory>
+      <data-type>int(11)|0</data-type>
+    </column>
+    <key id="274" parent="45" name="PRIMARY">
+      <columns>id</columns>
+      <primary>1</primary>
+    </key>
+  </database-model>
+</dataSource>
